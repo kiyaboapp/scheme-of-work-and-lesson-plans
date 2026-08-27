@@ -2,7 +2,7 @@
   "id": "FEAT-002",
   "type": "feat",
   "description": "Implement the syllabus and calendar ingestion API endpoints. These endpoints accept structured JSON data representing the syllabus (topics, sub-topics, objectives, planned_periods) and academic calendar (terms, weeks with classification and period_budget), validate it, and store all fields in the SQLite database. Also implement the textbook mapping endpoint as a placeholder for future use.",
-  "status": "in_progress",
+  "status": "completed",
   "steps": [
     "Create app/routers/__init__.py",
     "Create app/routers/syllabus.py with endpoints: POST /api/syllabus (accepts SyllabusInput JSON with subject, form, topics containing sub_topics containing objectives; validates all required fields; stores in DB and returns syllabus ID), GET /api/syllabus (list all), GET /api/syllabus/{id} (get one with all nested data)",
@@ -25,5 +25,5 @@
     "Run 'uv run pytest tests/test_syllabus.py tests/test_calendar.py tests/test_textbook.py -v' and confirm all tests pass"
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "Fixed conftest.py to use StaticPool for in-memory SQLite. Without StaticPool, each connection to sqlite:///:memory: gets its own empty database, causing 'no such table' errors when the API routes use the test session. The WeekClassification enum maps correctly from string input using WeekClassification(value)."
 }
