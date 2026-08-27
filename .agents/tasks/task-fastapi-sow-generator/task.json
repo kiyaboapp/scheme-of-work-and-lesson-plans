@@ -1,0 +1,7 @@
+{
+  "task_id": "task-fastapi-sow-generator",
+  "task_description": "Build a FastAPI application with SQLite that accepts syllabus and calendar data, stores it in a database, provides an allocation engine to break lesson counts from syllabus across sub-topics into teaching weeks, and generates schemes of work and lesson plans from the stored data models. Includes a textbook placeholder for future integration.",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null
+}
