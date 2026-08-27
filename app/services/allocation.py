@@ -40,6 +40,12 @@ def run_allocation(syllabus_id: int, calendar_id: int, db: Session) -> list[Allo
         .all()
     )
 
+    # Delete any existing allocation for this pair (idempotent re-run)
+    db.query(AllocationAssignment).filter(
+        AllocationAssignment.syllabus_id == syllabus_id,
+        AllocationAssignment.calendar_id == calendar_id,
+    ).delete(synchronize_session="fetch")
+
     # Get teaching weeks ordered by term order and week number
     teaching_weeks = (
         db.query(Week)

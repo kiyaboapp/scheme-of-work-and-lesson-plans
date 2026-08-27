@@ -71,6 +71,7 @@ def generate_scheme_of_work(
 
         if textbook_entries:
             resources_parts = []
+            references_parts = []
             for entry in textbook_entries:
                 ref = entry.book_title
                 if entry.start_page and entry.end_page:
@@ -78,9 +79,37 @@ def generate_scheme_of_work(
                 elif entry.start_page:
                     ref += f" p.{entry.start_page}"
                 resources_parts.append(ref)
+                references_parts.append(entry.book_title)
             teaching_resources = ", ".join(resources_parts)
+            # Deduplicate reference book titles
+            references = ", ".join(dict.fromkeys(references_parts))
         else:
             teaching_resources = "Charts, real objects"
+            references = "Syllabus, Teacher's guide"
+
+        # Derive teaching methods from competences or use sensible defaults
+        competences = sub_topic.competences
+        if competences and isinstance(competences, list) and len(competences) > 0:
+            # Map competences to teaching methods
+            method_set = []
+            for comp in competences:
+                comp_lower = comp.lower() if isinstance(comp, str) else ""
+                if "problem" in comp_lower or "solving" in comp_lower:
+                    method_set.append("Problem solving")
+                elif "discussion" in comp_lower or "group" in comp_lower:
+                    method_set.append("Group discussion")
+                elif "research" in comp_lower or "investigation" in comp_lower:
+                    method_set.append("Research")
+                elif "practical" in comp_lower or "hands" in comp_lower:
+                    method_set.append("Practical work")
+                elif "presentation" in comp_lower or "demonstrate" in comp_lower:
+                    method_set.append("Presentations")
+                else:
+                    method_set.append("Guided practice")
+            # Always include explanation as a base method
+            teaching_methods = "Explanation, " + ", ".join(dict.fromkeys(method_set))
+        else:
+            teaching_methods = "Explanation, Demonstrations, Guided practice, Group discussion"
 
         entry = SchemeOfWorkEntry(
             week_number=week.week_number,
@@ -90,9 +119,9 @@ def generate_scheme_of_work(
             sub_topic_title=sub_topic_title,
             objectives=objective_texts,
             periods=assignment.periods,
-            teaching_methods="Presentations, Problem solving, Practical work, Research, Group discussion",
+            teaching_methods=teaching_methods,
             teaching_resources=teaching_resources,
-            references="TIE(2023), Basic Mathematics for Secondary Schools Book 1, TIE-DSM",
+            references=references,
         )
         entries.append(entry)
 

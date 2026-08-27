@@ -1,7 +1,7 @@
 """Shared test fixtures for SOW Generator tests."""
 
 import pytest
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, event
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 from fastapi.testclient import TestClient
@@ -17,6 +17,17 @@ engine_test = create_engine(
     connect_args={"check_same_thread": False},
     poolclass=StaticPool,
 )
+
+
+def _set_sqlite_pragma(dbapi_conn, connection_record):
+    """Enable foreign key enforcement for every SQLite connection."""
+    cursor = dbapi_conn.cursor()
+    cursor.execute("PRAGMA foreign_keys=ON")
+    cursor.close()
+
+
+event.listen(engine_test, "connect", _set_sqlite_pragma)
+
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine_test)
 
 

@@ -2,7 +2,7 @@
   "id": "FEAT-001",
   "type": "feat",
   "description": "Create the FastAPI project structure with SQLite database models for syllabus, calendar, and allocation data. Set up pyproject.toml with dependencies (fastapi, uvicorn, sqlalchemy, pydantic, alembic), create the app package with database configuration, and define all SQLAlchemy ORM models reflecting the domain: Topic, SubTopic, Objective, CalendarTerm, CalendarWeek, AllocationAssignment, SchemeOfWorkEntry, LessonPlan. Also create Pydantic schemas for API request/response validation.",
-  "status": "in_progress",
+  "status": "completed",
   "steps": [
     "Create pyproject.toml at project root with dependencies: fastapi, uvicorn[standard], sqlalchemy, pydantic, pydantic-settings, alembic, python-multipart. Dev dependencies: pytest, httpx, pytest-asyncio.",
     "Create app/ package with __init__.py",
@@ -24,5 +24,5 @@
     "Run 'uv run pytest tests/ -v' and confirm all tests pass"
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "All acceptance criteria verified. uv sync installs successfully (used Python 3.12.13 from system). All 6 tests pass. Note: pyproject.toml uses deprecated tool.uv.dev-dependencies field (works but shows warning). hatchling requires explicit packages config for non-standard package names. The uv.lock file is committed as part of the project."
 }

@@ -1,5 +1,6 @@
 """Lesson plan generator: produces per-period lesson plans from allocation data."""
 
+import math
 from datetime import timedelta
 from typing import Optional
 
@@ -12,6 +13,9 @@ from app.models import (
     TextbookEntry,
     Week,
 )
+
+# Number of school days in a week (Monday to Friday)
+SCHOOL_DAYS_PER_WEEK = 5
 
 
 def generate_lesson_plans_for_week(
@@ -58,6 +62,10 @@ def generate_lesson_plans_for_week(
 
     lesson_plans: list[LessonPlan] = []
 
+    # Calculate periods per day for this week (for date derivation)
+    week_budget = week.period_budget or 0
+    periods_per_day = max(1, math.ceil(week_budget / SCHOOL_DAYS_PER_WEEK))
+
     for assignment in assignments:
         sub_topic = assignment.sub_topic
         objectives = sorted(sub_topic.objectives, key=lambda o: o.order)
@@ -101,10 +109,11 @@ def generate_lesson_plans_for_week(
                 lesson_plans.append(existing)
                 continue
 
-            # Calculate date from week start_date
+            # Calculate date from week start_date using periods_per_day
             plan_date = None
             if week.start_date:
-                plan_date = week.start_date + timedelta(days=p - 1)
+                day_offset = (p - 1) // periods_per_day
+                plan_date = week.start_date + timedelta(days=day_offset)
 
             lesson_plan = LessonPlan(
                 assignment_id=assignment.id,
