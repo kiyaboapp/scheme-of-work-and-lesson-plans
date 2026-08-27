@@ -27,12 +27,12 @@ git clone https://github.com/kiyaboapp/scheme-of-work-and-lesson-plans.git
 cd scheme-of-work-and-lesson-plans
 
 # Create virtual environment and install dependencies (using uv)
-uv venv .venv
+uv venv venv
 uv pip install -e '.[dev]'
 
 # Or using pip
-python -m venv .venv
-source .venv/bin/activate
+python -m venv venv
+source venv/bin/activate
 pip install -e '.[dev]'
 ```
 
@@ -43,7 +43,7 @@ pip install -e '.[dev]'
 Populate the database with Form I Mathematics syllabus, 2026 academic calendar, textbook references, and run the allocation engine:
 
 ```bash
-.venv/bin/python seed/seed_form1_math.py
+venv/bin/python seed/seed_form1_math.py
 ```
 
 This creates `sow_generator.db` (SQLite) with:
@@ -57,7 +57,7 @@ This creates `sow_generator.db` (SQLite) with:
 Run the full pipeline (fresh database, seed, then generate documents):
 
 ```bash
-.venv/bin/python seed/generate_examples.py
+venv/bin/python seed/generate_examples.py
 ```
 
 This produces two files in the `examples/` directory:
@@ -67,7 +67,7 @@ This produces two files in the `examples/` directory:
 ### 3. Start the API Server
 
 ```bash
-.venv/bin/python -m uvicorn app.main:app --reload
+venv/bin/python -m uvicorn app.main:app --reload
 ```
 
 The server runs at `http://localhost:8000`. Interactive API docs are available at `http://localhost:8000/docs`.
@@ -132,10 +132,10 @@ These files are generated from the Form I Mathematics seed data and serve as ref
 
 ```bash
 # Run all tests with verbose output
-.venv/bin/python -m pytest tests/ -v
+venv/bin/python -m pytest tests/ -v
 
 # Run a specific test file
-.venv/bin/python -m pytest tests/test_docx_generation.py -v
+venv/bin/python -m pytest tests/test_docx_generation.py -v
 ```
 
 ## Project Structure
