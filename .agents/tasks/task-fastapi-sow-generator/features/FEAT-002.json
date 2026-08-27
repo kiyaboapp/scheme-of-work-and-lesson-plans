@@ -1,0 +1,29 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Implement the syllabus and calendar ingestion API endpoints. These endpoints accept structured JSON data representing the syllabus (topics, sub-topics, objectives, planned_periods) and academic calendar (terms, weeks with classification and period_budget), validate it, and store all fields in the SQLite database. Also implement the textbook mapping endpoint as a placeholder for future use.",
+  "status": "completed",
+  "steps": [
+    "Create app/routers/__init__.py",
+    "Create app/routers/syllabus.py with endpoints: POST /api/syllabus (accepts SyllabusInput JSON with subject, form, topics containing sub_topics containing objectives; validates all required fields; stores in DB and returns syllabus ID), GET /api/syllabus (list all), GET /api/syllabus/{id} (get one with all nested data)",
+    "Create app/routers/calendar.py with endpoints: POST /api/calendar (accepts CalendarInput JSON with academic_year, terms containing weeks with week_number, start_date, end_date, classification, period_budget; validates fields; stores in DB and returns calendar ID), GET /api/calendar (list all), GET /api/calendar/{id} (get one with all nested data)",
+    "Create app/routers/textbook.py with endpoints: POST /api/textbook (accepts list of TextbookEntry items mapping sub_topic_id to book_title + page range; stores in DB), GET /api/textbook (list all entries)",
+    "Include all routers in app/main.py",
+    "Create tests/test_syllabus.py with tests: test creating a syllabus with valid data returns 201 and correct structure, test getting a syllabus by ID returns all nested topics/sub_topics/objectives, test creating syllabus with missing required fields returns 422",
+    "Create tests/test_calendar.py with tests: test creating calendar with valid data returns 201, test calendar weeks have correct classification and period_budget, test getting calendar by ID returns all nested terms/weeks",
+    "Create tests/test_textbook.py with test creating textbook entries and retrieving them"
+  ],
+  "acceptance_criteria": [
+    "POST /api/syllabus with valid JSON stores all topics, sub_topics, objectives, planned_periods in DB and returns the created syllabus with ID",
+    "POST /api/calendar with valid JSON stores all terms, weeks with classification/period_budget in DB and returns the created calendar with ID",
+    "GET /api/syllabus/{id} returns the complete nested structure (syllabus > topics > sub_topics > objectives)",
+    "GET /api/calendar/{id} returns the complete nested structure (calendar > terms > weeks)",
+    "POST /api/textbook stores textbook entries linked to sub_topic IDs",
+    "All tests in tests/test_syllabus.py, tests/test_calendar.py, tests/test_textbook.py pass"
+  ],
+  "verification": [
+    "Run 'uv run pytest tests/test_syllabus.py tests/test_calendar.py tests/test_textbook.py -v' and confirm all tests pass"
+  ],
+  "blocked_reason": null,
+  "findings": "Fixed conftest.py to use StaticPool for in-memory SQLite. Without StaticPool, each connection to sqlite:///:memory: gets its own empty database, causing 'no such table' errors when the API routes use the test session. The WeekClassification enum maps correctly from string input using WeekClassification(value)."
+}

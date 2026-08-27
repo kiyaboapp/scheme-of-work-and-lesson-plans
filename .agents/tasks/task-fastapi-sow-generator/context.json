@@ -1,0 +1,21 @@
+{
+  "project_type": "Python FastAPI application with SQLite database for generating schemes of work and lesson plans from syllabus and calendar data",
+  "language": "Python 3.11",
+  "build_system": "uv (package manager), pyproject.toml with src layout",
+  "test_framework": "pytest with httpx TestClient for FastAPI endpoint testing",
+  "build_command": "cd /projects/sandbox/scheme-of-work-and-lesson-plans && uv sync",
+  "test_command": "cd /projects/sandbox/scheme-of-work-and-lesson-plans && uv run pytest tests/ -v",
+  "verification_instructions": "1. Run uv sync to install deps. 2. Run uv run pytest tests/ -v. 3. Start server with uv run uvicorn app.main:app and test endpoints.",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "uv sync in project root installs all dependencies",
+  "environment_constraints": "OPEN_INTERNET - full network access. Python 3.11 via pyenv. uv available.",
+  "contribution_requirements": "No formal CONTRIBUTING.md exists. This is greenfield development.",
+  "key_patterns": "Domain data: Tanzania O-Level Mathematics syllabus with topics > sub_topics > objectives + planned_periods. Calendar with terms > weeks (teaching/holiday/examination + period_budget). Allocation is greedy sequential bin-packing assigning sub-topics to teaching weeks. Scheme of work = table of assignments per week. Lesson plan = per-period document with objectives, activities, assessment.",
+  "relevant_files": [
+    "tools/_extracted/syllabus_0_24.txt (syllabus structure reference)",
+    "tools/_extracted/sample_scheme.txt (scheme of work format reference)",
+    "tools/_extracted/sample_lesson.txt (lesson plan format reference)",
+    ".kiro/specs/scheme-of-work-and-lesson-plan-generator/design.md (data model reference)"
+  ],
+  "directory_structure": "Greenfield. Will create: app/ (FastAPI application with models, routes, services, database), tests/ (pytest tests), pyproject.toml"
+}

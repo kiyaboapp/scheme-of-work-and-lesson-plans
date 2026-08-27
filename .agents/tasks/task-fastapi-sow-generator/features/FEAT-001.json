@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Create the FastAPI project structure with SQLite database models for syllabus, calendar, and allocation data. Set up pyproject.toml with dependencies (fastapi, uvicorn, sqlalchemy, pydantic, alembic), create the app package with database configuration, and define all SQLAlchemy ORM models reflecting the domain: Topic, SubTopic, Objective, CalendarTerm, CalendarWeek, AllocationAssignment, SchemeOfWorkEntry, LessonPlan. Also create Pydantic schemas for API request/response validation.",
+  "status": "completed",
+  "steps": [
+    "Create pyproject.toml at project root with dependencies: fastapi, uvicorn[standard], sqlalchemy, pydantic, pydantic-settings, alembic, python-multipart. Dev dependencies: pytest, httpx, pytest-asyncio.",
+    "Create app/ package with __init__.py",
+    "Create app/database.py with SQLAlchemy engine setup using SQLite (file: sow_generator.db), SessionLocal, Base declarative base, and get_db dependency",
+    "Create app/models.py with SQLAlchemy ORM models: Syllabus (id, subject, form, source_note, created_at), Topic (id, syllabus_id FK, order, topic_id_code, title), SubTopic (id, topic_id FK, order, sub_topic_id_code, title, planned_periods, competences JSON), Objective (id, sub_topic_id FK, order, text), CalendarData (id, academic_year, created_at), Term (id, calendar_id FK, order, term_id_code, title), Week (id, term_id FK, week_number, start_date, end_date, classification enum teaching/holiday/examination, period_budget, label), TextbookEntry (id, sub_topic_id FK, book_title, start_page, end_page, note), AllocationAssignment (id, syllabus_id FK, calendar_id FK, week_id FK, sub_topic_id FK, slot, first_period, last_period, periods, split_index, split_total), LessonPlan (id, assignment_id FK, period_number, date, teacher_activities, student_activities, assessment, consolidation, teaching_resources, remarks)",
+    "Create app/schemas.py with Pydantic models for API input/output: SyllabusInput (with nested topics/sub_topics/objectives), CalendarInput (with nested terms/weeks), AllocationResponse, SchemeOfWorkResponse, LessonPlanResponse, and supporting nested schemas",
+    "Create app/main.py with FastAPI app instance, database table creation on startup, and include routers",
+    "Create tests/__init__.py and tests/conftest.py with test database fixture (SQLite in-memory) and TestClient setup"
+  ],
+  "acceptance_criteria": [
+    "Running 'uv sync' installs all dependencies without errors",
+    "Running 'uv run python -c \"from app.main import app; print(app.title)\"' prints the app title without import errors",
+    "All SQLAlchemy models can be imported and tables created without errors",
+    "Running 'uv run pytest tests/ -v' passes (even if just a smoke test)"
+  ],
+  "verification": [
+    "Run 'uv sync' and confirm exit code 0",
+    "Run 'uv run python -c \"from app.models import *; from app.database import engine, Base; Base.metadata.create_all(bind=engine); print(Base.metadata.tables.keys())\"' and confirm all table names are printed",
+    "Run 'uv run pytest tests/ -v' and confirm all tests pass"
+  ],
+  "blocked_reason": null,
+  "findings": "All acceptance criteria verified. uv sync installs successfully (used Python 3.12.13 from system). All 6 tests pass. Note: pyproject.toml uses deprecated tool.uv.dev-dependencies field (works but shows warning). hatchling requires explicit packages config for non-standard package names. The uv.lock file is committed as part of the project."
+}

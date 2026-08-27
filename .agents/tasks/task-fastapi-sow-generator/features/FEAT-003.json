@@ -1,0 +1,33 @@
+{
+  "id": "FEAT-003",
+  "type": "feat",
+  "description": "Implement the allocation engine and scheme of work / lesson plan generation endpoints. The allocation engine uses greedy sequential bin-packing to assign sub-topics to teaching weeks respecting period budgets. The scheme of work endpoint produces the full weekly plan. The lesson plan endpoint produces per-period lesson plans from allocations.",
+  "status": "completed",
+  "steps": [
+    "Create app/services/__init__.py",
+    "Create app/services/allocation.py implementing the greedy bin-packing algorithm: iterate sub-topics in syllabus order, for each sub-topic consume periods from current teaching week (skipping holiday/examination weeks), split across weeks when sub-topic periods exceed remaining capacity. Store AllocationAssignment records in DB with week_id, sub_topic_id, slot, first_period, last_period, periods, split_index, split_total.",
+    "Create app/services/scheme_generator.py that reads allocation assignments from DB and produces a scheme of work response: for each assignment row, include week_number, term_title, month, periods, topic_title, sub_topic_title, objectives (numbered), competences, teaching_learning_methods (from syllabus suggested methods), teaching_resources (from textbook entries if available), assessment_tools, references. The output structure should match the sample scheme format with columns: main_competences, specific_competences, learning_activities, specific_activities, month, week, periods, teaching_methods, resources, assessment, references, remarks.",
+    "Create app/services/lesson_plan_generator.py that given a syllabus_id, calendar_id, week_number, and period_number, produces a lesson plan: resolves the assignment for that week/period from allocation, populates date (start_date + period offset), subject, form, main_competence, specific_competence, main_activity, specific_activity, teaching_resources, references, teaching_and_learning_process steps (introduction, development, consolidation), remarks placeholder.",
+    "Create app/routers/allocation.py with endpoints: POST /api/allocate (accepts syllabus_id and calendar_id, runs allocation engine, stores results, returns allocation summary), GET /api/allocation/{syllabus_id}/{calendar_id} (returns full allocation plan)",
+    "Create app/routers/scheme.py with endpoints: GET /api/scheme/{syllabus_id}/{calendar_id} (generates and returns the complete scheme of work as JSON with all weekly assignments and their details)",
+    "Create app/routers/lesson_plan.py with endpoints: GET /api/lesson-plan/{syllabus_id}/{calendar_id}/week/{week_number} (returns all lesson plans for a week), GET /api/lesson-plan/{syllabus_id}/{calendar_id}/week/{week_number}/period/{period_number} (returns single lesson plan)",
+    "Include new routers in app/main.py",
+    "Create tests/test_allocation.py testing: allocation assigns all sub-topics, respects period budgets, splits correctly across weeks, skips non-teaching weeks, produces deterministic results",
+    "Create tests/test_scheme.py testing: scheme endpoint returns correct structure with all required columns, assignments in correct order",
+    "Create tests/test_lesson_plan.py testing: lesson plan for valid week/period returns correct data, invalid week returns 404 with bounds info"
+  ],
+  "acceptance_criteria": [
+    "POST /api/allocate with valid syllabus_id and calendar_id runs the allocation algorithm and stores assignments in the database",
+    "The allocation respects period_budget per week and only assigns to teaching-classified weeks",
+    "Sub-topics that exceed remaining week capacity are split across consecutive teaching weeks",
+    "GET /api/scheme/{syllabus_id}/{calendar_id} returns the full scheme of work with weekly assignments including topic, sub-topic, objectives, methods, resources",
+    "GET /api/lesson-plan/.../week/{n}/period/{p} returns a lesson plan with date, competence, objectives, activities",
+    "All allocation, scheme, and lesson plan tests pass"
+  ],
+  "verification": [
+    "Run 'uv run pytest tests/ -v' and confirm all tests pass",
+    "Run the full flow test: create syllabus, create calendar, allocate, then retrieve scheme and lesson plans"
+  ],
+  "blocked_reason": null,
+  "findings": "Fixed a Pydantic v2 issue where field named 'date' with type Optional[date] was being resolved as NoneType. Root cause: Pydantic's annotation resolution gets confused when a field name shadows an imported type. Fix: use datetime.date instead of bare date in schemas.py. All 32 tests pass including 5 allocation tests, 3 scheme tests, and 3 lesson plan tests."
+}
