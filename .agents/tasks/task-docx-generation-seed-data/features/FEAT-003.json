@@ -2,7 +2,7 @@
   "id": "FEAT-003",
   "type": "feat",
   "description": "Run the full pipeline (seed + docx generation) and commit example output files under examples/ directory as proof of what the system produces. Update README with documentation.",
-  "status": "pending",
+  "status": "in_progress",
   "steps": [
     "Create a runner script (seed/generate_examples.py) that: (1) Runs the seed to populate the database, (2) Uses the app services directly (via TestClient or direct DB session) to generate scheme of work .docx and lesson plan .docx files, (3) Saves them to examples/ directory with clear filenames like 'Scheme_of_Work_Form1_Mathematics_2026.docx' and 'Lesson_Plans_Form1_Mathematics_2026.docx'.",
     "Run the generator script to produce the example .docx files in examples/.",
