@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Create the Form I Mathematics seed data script that extracts syllabus topics from the syllabus text, defines the 2026 calendar (matching the sample scheme dates exactly), and ingests all data via the app's API endpoints. Then run allocation to produce assignments.",
+  "status": "completed",
+  "steps": [
+    "Install python-docx into the venv: .venv/bin/pip install python-docx",
+    "Create seed/seed_form1_math.py (new directory seed/) that contains the complete Form I Mathematics syllabus structured as JSON matching the SyllabusInput schema. Include all 3 main competences with 5 specific competences and their learning activities as objectives. Use the exact data from tools/_extracted/syllabus_0_24.txt pages 14-24.",
+    "In the same script, define the 2026 calendar matching the sample scheme: Term 1 (March registration + 4 teaching weeks + midterm + break + 3 more teaching weeks + terminal assessment + break), Term 2 (July-Oct: 4 teaching weeks + midterm + break + 6 teaching weeks + revision). Use exact dates from sample_scheme.txt: midterm break 27/03-08/04, first term break 05/06-06/07, mid-term break 04/09-14/09, end of year 04/12.",
+    "The seed script should: (1) Start the FastAPI app or use SQLAlchemy directly with the same database.py engine, (2) POST syllabus data to /api/syllabus, (3) POST calendar to /api/calendar, (4) POST textbook entries linking sub-topics to 'TIE(2023) Basic Mathematics for Secondary Schools Book 1', (5) POST /api/allocate to run bin-packing, (6) Print summary of what was created.",
+    "The seed script should use httpx or requests to call the running app, OR use the TestClient approach to call endpoints directly without starting a server. Prefer the TestClient approach for simplicity.",
+    "Add a textbook entry for each sub-topic referencing 'TIE (2023), Basic Mathematics for Secondary Schools Book 1, TIE-DSM' (the exact reference from the sample scheme).",
+    "Verify the seed runs without errors and creates a populated sow_generator.db"
+  ],
+  "acceptance_criteria": [
+    "seed/seed_form1_math.py exists and is executable",
+    "Running the seed creates a syllabus with 3 topics (one per main competence) and 5 sub-topics (one per specific competence) with learning activities as objectives",
+    "Calendar has 2 terms with the correct number of teaching weeks matching the sample scheme dates",
+    "Allocation runs successfully assigning all 175 periods across teaching weeks",
+    "Textbook entries are created for all sub-topics"
+  ],
+  "verification": [
+    "Run: cd /projects/sandbox/scheme-of-work-and-lesson-plans && .venv/bin/python seed/seed_form1_math.py",
+    "Verify the script completes without errors and prints a summary"
+  ],
+  "blocked_reason": null,
+  "findings": "python-docx installed via uv pip. The venv does not have pip module directly - use `uv pip install` or `.venv/bin/python -m uv pip install`. Starlette shows a deprecation warning about httpx vs httpx2 but tests all pass. The allocation engine successfully distributes all 175 periods across 35 teaching weeks (15 in Term 1, 20 in Term 2) with 5 periods per week. The seed script is importable and runnable standalone."
+}

@@ -1,0 +1,14 @@
+{
+  "task_id": "task-docx-generation-seed-data",
+  "task_description": "Create seed data from Form I Mathematics syllabus, add python-docx based .docx generation for Scheme of Work and Lesson Plans matching sample formats, add API endpoints, and generate example output files.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null,
+  "verification": {
+    "build": "pass",
+    "tests": "pass",
+    "test_quality": "pass",
+    "docker_build": "skipped",
+    "summary": "All 54 tests pass (14 new docx tests + 40 existing). Seed script allocates all 175 periods. Example .docx files generated successfully (38KB scheme, 44KB lesson plans)."
+  }
+}
