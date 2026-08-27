@@ -1,0 +1,26 @@
+{
+  "id": "FEAT-003",
+  "type": "feat",
+  "description": "Run the full pipeline (seed + docx generation) and commit example output files under examples/ directory as proof of what the system produces. Update README with documentation.",
+  "status": "completed",
+  "steps": [
+    "Create a runner script (seed/generate_examples.py) that: (1) Runs the seed to populate the database, (2) Uses the app services directly (via TestClient or direct DB session) to generate scheme of work .docx and lesson plan .docx files, (3) Saves them to examples/ directory with clear filenames like 'Scheme_of_Work_Form1_Mathematics_2026.docx' and 'Lesson_Plans_Form1_Mathematics_2026.docx'.",
+    "Run the generator script to produce the example .docx files in examples/.",
+    "Update README.md with: (1) Project description, (2) How to run the seed, (3) How to generate .docx output, (4) API endpoint documentation for the /docx endpoints, (5) Description of the examples/ directory.",
+    "Ensure examples/ directory contains the generated .docx files ready for commit.",
+    "Commit all changes with a descriptive message."
+  ],
+  "acceptance_criteria": [
+    "examples/Scheme_of_Work_Form1_Mathematics_2026.docx exists and is a valid .docx file",
+    "examples/Lesson_Plans_Form1_Mathematics_2026.docx exists and is a valid .docx file",
+    "README.md documents the project, seed script, and docx generation",
+    "All files are committed to the feat/docx-generation-seed-data branch"
+  ],
+  "verification": [
+    "Run: cd /projects/sandbox/scheme-of-work-and-lesson-plans && .venv/bin/python seed/generate_examples.py",
+    "Verify examples/*.docx files are created and non-empty",
+    "Run: cd /projects/sandbox/scheme-of-work-and-lesson-plans && .venv/bin/python -m pytest tests/ -v"
+  ],
+  "blocked_reason": null,
+  "findings": "All 54 tests pass. Example files generated successfully: Scheme_of_Work (38KB) and Lesson_Plans (44KB). Changed .gitignore from *.db to sow_generator.db specifically to allow tracking of any other .db files if needed while still ignoring the runtime artifact."
+}

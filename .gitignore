@@ -7,7 +7,7 @@ venv/
 .env
 
 # Database
-*.db
+sow_generator.db
 
 # OS files
 .DS_Store

@@ -1,0 +1,29 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Add python-docx based .docx writer services that generate (a) a Scheme of Work document matching the 12-column table format from the sample, and (b) Lesson Plan documents matching the sample lesson plan format with header info and teaching/learning process stages table. Add corresponding API endpoints that return StreamingResponse .docx files.",
+  "status": "completed",
+  "steps": [
+    "Add python-docx to pyproject.toml dependencies.",
+    "Create app/services/docx_scheme_writer.py that accepts a SchemeOfWorkResponse and produces a .docx BytesIO object. The document should have: (1) Header paragraphs matching sample: 'PRESIDENT'S OFFICE', 'REGIONAL ADMINISTRATION AND LOCAL GOVERNMENT', 'SCHEME OF WORK - 2026', teacher/school/subject/form/term/year fields, (2) A 12-column table with header row: MAIN COMPETENCES, SPECIFIC COMPETENCES, LEARNING ACTIVITIES, SPECIFIC ACTIVITIES, MONTH, WEEK, PERIODS, TEACHING AND LEARNING METHODS, TEACHING AND LEARNING RESOURCES, ASSESSMENT TOOLS, REFERENCES, REMARK. (3) Data rows from SchemeOfWorkResponse entries, (4) Special rows for midterm assessment, midterm break, terminal assessment, first term break (matching sample scheme format where these span all columns).",
+    "Create app/services/docx_lesson_plan_writer.py that accepts lesson plan data and produces .docx files. Each lesson plan should have: (1) Title 'TEACHER'S LESSON PLAN', (2) Header fields: Name of School, Teacher's Name, Form, Subject (Basic Mathematics), Time, Date, (3) Table cells for Main Competence, Specific Competence, (4) Main Activity and Specific Activity text (following sample pattern: 'Within 1 period students should be able to...'), (5) Teaching and Learning Resources, References (TIE 2023 citation), (6) 'Teaching and Learning Process' section with a 4-row stages table (Introduction 5min, Competence Development 20min, Design 10min, Realisation 5min) x (Teaching Activities, Learning Activities, Assessment Criteria), (7) Remarks section.",
+    "Add GET /api/scheme/{syllabus_id}/{calendar_id}/docx endpoint in app/routers/scheme.py that generates the scheme and returns it as a .docx StreamingResponse with content-disposition header.",
+    "Add GET /api/lesson-plan/{syllabus_id}/{calendar_id}/docx endpoint in app/routers/lesson_plan.py that generates all lesson plans for the full allocation and returns a single .docx file containing all lesson plans (one per page/section).",
+    "Write tests in tests/test_docx_generation.py that verify: (1) The /docx endpoints return 200 with application/vnd.openxmlformats-officedocument.wordprocessingml.document content-type, (2) The response content is valid .docx (can be opened with python-docx), (3) The scheme .docx contains the expected table structure, (4) The lesson plan .docx contains expected header fields."
+  ],
+  "acceptance_criteria": [
+    "python-docx is added to pyproject.toml dependencies",
+    "GET /api/scheme/{syllabus_id}/{calendar_id}/docx returns a valid .docx file",
+    "GET /api/lesson-plan/{syllabus_id}/{calendar_id}/docx returns a valid .docx file",
+    "The scheme .docx has a 12-column table matching the sample format",
+    "The lesson plan .docx has the stages table (Introduction, Competence Development, Design, Realisation) matching the sample",
+    "All existing tests continue to pass",
+    "New tests in tests/test_docx_generation.py pass"
+  ],
+  "verification": [
+    "Run: cd /projects/sandbox/scheme-of-work-and-lesson-plans && .venv/bin/python -m pytest tests/ -v",
+    "All tests pass including new test_docx_generation.py"
+  ],
+  "blocked_reason": null,
+  "findings": "All 54 tests pass (14 new + 40 existing). python-docx was already in pyproject.toml. The docx_scheme_writer generates a 12-column table matching the sample format with special rows for midterm/terminal breaks. The docx_lesson_plan_writer creates individual lesson plan sections with a 5x5 stages table (header + 4 stages: Introduction, Competence Development, Design, Realisation). Both endpoints return StreamingResponse with correct Content-Disposition headers."
+}
