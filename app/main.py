@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.database import Base, engine
+from app.routers import calendar, syllabus, textbook
 
 
 @asynccontextmanager
@@ -20,6 +21,10 @@ app = FastAPI(
     version="0.1.0",
     lifespan=lifespan,
 )
+
+app.include_router(syllabus.router)
+app.include_router(calendar.router)
+app.include_router(textbook.router)
 
 
 @app.get("/health")
