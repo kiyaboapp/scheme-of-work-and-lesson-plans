@@ -2,7 +2,7 @@
   "id": "FEAT-002",
   "type": "feat",
   "description": "Add python-docx based .docx writer services that generate (a) a Scheme of Work document matching the 12-column table format from the sample, and (b) Lesson Plan documents matching the sample lesson plan format with header info and teaching/learning process stages table. Add corresponding API endpoints that return StreamingResponse .docx files.",
-  "status": "pending",
+  "status": "in_progress",
   "steps": [
     "Add python-docx to pyproject.toml dependencies.",
     "Create app/services/docx_scheme_writer.py that accepts a SchemeOfWorkResponse and produces a .docx BytesIO object. The document should have: (1) Header paragraphs matching sample: 'PRESIDENT'S OFFICE', 'REGIONAL ADMINISTRATION AND LOCAL GOVERNMENT', 'SCHEME OF WORK - 2026', teacher/school/subject/form/term/year fields, (2) A 12-column table with header row: MAIN COMPETENCES, SPECIFIC COMPETENCES, LEARNING ACTIVITIES, SPECIFIC ACTIVITIES, MONTH, WEEK, PERIODS, TEACHING AND LEARNING METHODS, TEACHING AND LEARNING RESOURCES, ASSESSMENT TOOLS, REFERENCES, REMARK. (3) Data rows from SchemeOfWorkResponse entries, (4) Special rows for midterm assessment, midterm break, terminal assessment, first term break (matching sample scheme format where these span all columns).",
