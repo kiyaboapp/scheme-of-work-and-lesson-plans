@@ -2,7 +2,7 @@
   "id": "FEAT-003",
   "type": "feat",
   "description": "Implement the allocation engine and scheme of work / lesson plan generation endpoints. The allocation engine uses greedy sequential bin-packing to assign sub-topics to teaching weeks respecting period budgets. The scheme of work endpoint produces the full weekly plan. The lesson plan endpoint produces per-period lesson plans from allocations.",
-  "status": "pending",
+  "status": "in_progress",
   "steps": [
     "Create app/services/__init__.py",
     "Create app/services/allocation.py implementing the greedy bin-packing algorithm: iterate sub-topics in syllabus order, for each sub-topic consume periods from current teaching week (skipping holiday/examination weeks), split across weeks when sub-topic periods exceed remaining capacity. Store AllocationAssignment records in DB with week_id, sub_topic_id, slot, first_period, last_period, periods, split_index, split_total.",

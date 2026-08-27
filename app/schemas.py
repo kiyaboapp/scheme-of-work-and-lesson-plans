@@ -1,6 +1,6 @@
 """Pydantic schemas for API request/response validation."""
 
-from datetime import date, datetime
+import datetime
 from typing import Optional
 
 from pydantic import BaseModel, Field
@@ -49,8 +49,8 @@ class WeekInput(BaseModel):
     """Input schema for a calendar week."""
 
     week_number: int
-    start_date: Optional[date] = None
-    end_date: Optional[date] = None
+    start_date: Optional[datetime.date] = None
+    end_date: Optional[datetime.date] = None
     classification: str = Field(..., pattern="^(teaching|holiday|examination)$")
     period_budget: Optional[int] = None
     label: Optional[str] = None
@@ -128,7 +128,7 @@ class SyllabusResponse(BaseModel):
     subject: str
     form: str
     source_note: Optional[str] = None
-    created_at: datetime
+    created_at: datetime.datetime
     topics: list[TopicResponse] = []
 
     model_config = {"from_attributes": True}
@@ -139,8 +139,8 @@ class WeekResponse(BaseModel):
 
     id: int
     week_number: int
-    start_date: Optional[date] = None
-    end_date: Optional[date] = None
+    start_date: Optional[datetime.date] = None
+    end_date: Optional[datetime.date] = None
     classification: str
     period_budget: Optional[int] = None
     label: Optional[str] = None
@@ -165,7 +165,7 @@ class CalendarResponse(BaseModel):
 
     id: int
     academic_year: str
-    created_at: datetime
+    created_at: datetime.datetime
     terms: list[TermResponse] = []
 
     model_config = {"from_attributes": True}
@@ -229,7 +229,7 @@ class LessonPlanResponse(BaseModel):
     id: int
     assignment_id: int
     period_number: int
-    date: Optional[date] = None
+    date: Optional[datetime.date] = None
     teacher_activities: Optional[str] = None
     student_activities: Optional[str] = None
     assessment: Optional[str] = None
