@@ -1,0 +1,7 @@
+{
+  "task_id": "task-docx-generation-seed-data",
+  "task_description": "Create seed data from Form I Mathematics syllabus, add python-docx based .docx generation for Scheme of Work and Lesson Plans matching sample formats, add API endpoints, and generate example output files.",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null
+}

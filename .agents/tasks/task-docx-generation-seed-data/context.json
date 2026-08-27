@@ -1,0 +1,33 @@
+{
+  "project_type": "Python FastAPI application for generating Schemes of Work and Lesson Plans",
+  "language": "Python 3.12",
+  "build_system": "uv with pyproject.toml (hatchling backend)",
+  "test_framework": "pytest with conftest.py fixtures, in-memory SQLite, FastAPI TestClient",
+  "build_command": "cd /projects/sandbox/scheme-of-work-and-lesson-plans && .venv/bin/python -m pytest tests/ -v",
+  "test_command": "cd /projects/sandbox/scheme-of-work-and-lesson-plans && .venv/bin/python -m pytest tests/ -v",
+  "verification_instructions": "1. Run pytest to verify all existing and new tests pass. 2. Run the seed script to populate data and generate .docx files in examples/. 3. Verify .docx files are created and non-empty.",
+  "snapshot_or_generated_files": "examples/ directory will contain generated .docx files that should be committed as proof of output",
+  "setup_instructions": "The .venv is already set up. Install python-docx: .venv/bin/pip install python-docx",
+  "environment_constraints": "OPEN_INTERNET - full network access. Python 3.12 with .venv already available.",
+  "contribution_requirements": "Create a new branch from feat/fastapi-sow-generator, implement features, commit, push, create PR targeting feat/fastapi-sow-generator",
+  "key_patterns": "Routers in app/routers/, services in app/services/, Pydantic schemas in app/schemas.py, ORM models in app/models.py. Tests use TestClient with db_session fixture. APIs at /api/ prefix. Services accept (syllabus_id, calendar_id, db) and return Pydantic response models.",
+  "relevant_files": [
+    "app/models.py",
+    "app/schemas.py",
+    "app/services/scheme_generator.py",
+    "app/services/lesson_plan_generator.py",
+    "app/routers/scheme.py",
+    "app/routers/lesson_plan.py",
+    "app/routers/syllabus.py",
+    "app/routers/calendar.py",
+    "app/routers/allocation.py",
+    "app/routers/textbook.py",
+    "tools/_extracted/syllabus_0_24.txt",
+    "tools/_extracted/sample_scheme.txt",
+    "tools/_extracted/sample_lesson.txt",
+    "tests/conftest.py",
+    "tests/test_scheme.py",
+    "pyproject.toml"
+  ],
+  "directory_structure": "app/ (main app code), app/routers/ (API endpoints), app/services/ (business logic), tests/ (pytest), tools/_extracted/ (text extractions from PDF/DOCX assets), assets/ (original PDF/DOCX files)"
+}
