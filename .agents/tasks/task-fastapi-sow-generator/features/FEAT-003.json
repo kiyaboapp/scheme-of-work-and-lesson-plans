@@ -2,7 +2,7 @@
   "id": "FEAT-003",
   "type": "feat",
   "description": "Implement the allocation engine and scheme of work / lesson plan generation endpoints. The allocation engine uses greedy sequential bin-packing to assign sub-topics to teaching weeks respecting period budgets. The scheme of work endpoint produces the full weekly plan. The lesson plan endpoint produces per-period lesson plans from allocations.",
-  "status": "in_progress",
+  "status": "completed",
   "steps": [
     "Create app/services/__init__.py",
     "Create app/services/allocation.py implementing the greedy bin-packing algorithm: iterate sub-topics in syllabus order, for each sub-topic consume periods from current teaching week (skipping holiday/examination weeks), split across weeks when sub-topic periods exceed remaining capacity. Store AllocationAssignment records in DB with week_id, sub_topic_id, slot, first_period, last_period, periods, split_index, split_total.",
@@ -29,5 +29,5 @@
     "Run the full flow test: create syllabus, create calendar, allocate, then retrieve scheme and lesson plans"
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "Fixed a Pydantic v2 issue where field named 'date' with type Optional[date] was being resolved as NoneType. Root cause: Pydantic's annotation resolution gets confused when a field name shadows an imported type. Fix: use datetime.date instead of bare date in schemas.py. All 32 tests pass including 5 allocation tests, 3 scheme tests, and 3 lesson plan tests."
 }
