@@ -2,7 +2,7 @@
   "id": "FEAT-002",
   "type": "feat",
   "description": "Add python-docx based .docx writer services that generate (a) a Scheme of Work document matching the 12-column table format from the sample, and (b) Lesson Plan documents matching the sample lesson plan format with header info and teaching/learning process stages table. Add corresponding API endpoints that return StreamingResponse .docx files.",
-  "status": "in_progress",
+  "status": "completed",
   "steps": [
     "Add python-docx to pyproject.toml dependencies.",
     "Create app/services/docx_scheme_writer.py that accepts a SchemeOfWorkResponse and produces a .docx BytesIO object. The document should have: (1) Header paragraphs matching sample: 'PRESIDENT'S OFFICE', 'REGIONAL ADMINISTRATION AND LOCAL GOVERNMENT', 'SCHEME OF WORK - 2026', teacher/school/subject/form/term/year fields, (2) A 12-column table with header row: MAIN COMPETENCES, SPECIFIC COMPETENCES, LEARNING ACTIVITIES, SPECIFIC ACTIVITIES, MONTH, WEEK, PERIODS, TEACHING AND LEARNING METHODS, TEACHING AND LEARNING RESOURCES, ASSESSMENT TOOLS, REFERENCES, REMARK. (3) Data rows from SchemeOfWorkResponse entries, (4) Special rows for midterm assessment, midterm break, terminal assessment, first term break (matching sample scheme format where these span all columns).",
@@ -25,5 +25,5 @@
     "All tests pass including new test_docx_generation.py"
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "All 54 tests pass (14 new + 40 existing). python-docx was already in pyproject.toml. The docx_scheme_writer generates a 12-column table matching the sample format with special rows for midterm/terminal breaks. The docx_lesson_plan_writer creates individual lesson plan sections with a 5x5 stages table (header + 4 stages: Introduction, Competence Development, Design, Realisation). Both endpoints return StreamingResponse with correct Content-Disposition headers."
 }
