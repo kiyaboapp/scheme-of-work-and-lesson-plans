@@ -1,0 +1,590 @@
+=== MATHEMATICS SYLLABUS - O Level Final.pdf :: 48 pages ===
+
+----- page 1 -----
+THE UNITED REPUBLIC OF TANZANIA
+MINISTRY OF EDUCATION, SCIENCE AND TECHNOLOGY
+MATHEMATICS SYLLABUS FOR ORDINARY SECONDARY
+EDUCATION FORM I - IV
+2023
+
+----- page 2 -----
+© Tanzania Institute of Education 2023
+Published 2023
+ISBN: 978-9987-09-828-6
+Tanzania Institute of Education
+Mikocheni Area
+132 Ali Hassan Mwinyi Road
+P. O. Box 35094
+14112 Dar es Salaam
+Mobile numbers: +255 735 041 168 / 735 041 170
+E-mail: director.general@tie.go.tz
+Website: www.tie.go.tz
+This document should be cited as: Ministry of Education, Science and Technology (2023). Mathematics Syllabus for Ordinary
+Secondary Education Form I – IV. Tanzania Institute of Education.
+All rights reserved. No part of this syllabus may be reproduced, stored in any retrieval system or transmitted in any form or by any
+means whether electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of the Tanzania
+Institute of Education.
+ii
+
+----- page 3 -----
+Table of Contents
+List of Tables ....................................................................................................................................................................................iv
+Abbreviations and Acronyms ............................................................................................................................................................v
+Acknowledgements ..........................................................................................................................................................................vi
+1.0 Introduction ............................................................................................................................................................................1
+2.0 Main Objectives of Education in Tanzania ............................................................................................................................1
+3.0 Objectives of Ordinary Secondary Education-General Education .........................................................................................2
+4.0 General Competences for Ordinary Secondary Education-General Education .....................................................................3
+5.0 Main and Specific Competences ............................................................................................................................................3
+6.0 Roles of Teachers, Students, and Parents in Teaching and Learning .....................................................................................4
+6.1 The teacher ....................................................................................................................................................................4
+6.2 The student ....................................................................................................................................................................5
+6.3 The parent ......................................................................................................................................................................5
+7.0 Teaching and Learning Methods ............................................................................................................................................6
+8.0 Learning and Teaching Resources ..........................................................................................................................................6
+9.0 Assessment .............................................................................................................................................................................6
+10.0 Number of Periods .................................................................................................................................................................7
+11.0 Teaching and Learning Contents ...........................................................................................................................................7
+Form I .....................................................................................................................................................................................8
+Form II ..................................................................................................................................................................................19
+Form III ................................................................................................................................................................................29
+Form IV ................................................................................................................................................................................36
+Bibliography ...................................................................................................................................................................................42
+iii
+
+----- page 4 -----
+List of Tables
+Table 1: Main and Specific Competences for Form I-IV ...................................................................................................................3
+Table 2: Contribution of Continuous Assessment and National Examination in the final score .......................................................7
+Table 3: Detailed Contents for Form I ...............................................................................................................................................8
+Table 4: Detailed Contents for Form II ............................................................................................................................................18
+Table 5: Detailed Contents for Form III ..........................................................................................................................................28
+Table 6: Detailed Contents for Form IV ..........................................................................................................................................35
+iv
+
+----- page 5 -----
+Abbreviations and Acronyms
+ICT Information and Communication Technology
+TIE Tanzania Institute of Education
+TSL Tanzanian Sign Language
+v
+
+----- page 6 -----
+Acknowledgements
+The writing of the Mathematics Syllabus for Ordinary Secondary Education Form I–IV involved various experts from Government
+and non-government institutions. Therefore, the Tanzania Institute of Education (TIE) would like to thank all the experts who
+participated in writing of this syllabus, namely lecturers, tutors, school quality assurance officers, teachers and curriculum developers
+from TIE. The Institute is also grateful to the National Technical Committee that was formed by the Minister for Education, Science
+and Technology for coordinating the curriculum review process for pre-primary, primary, secondary, and teacher education. The
+Committee discharged its responsibilities professionally by ensuring that the contents of this syllabus are in line with the main
+objective of the 2023 curricular review, which is to ensure that the graduates acquire skills, knowledge and attitudes that will enable
+them to create self-employment, employ others, be employed and able to sustain themselves.
+Finally, TIE thanks the Ministry of Education, Science and Technology in a special way for facilitating the preparation and
+distribution of this syllabus.
+Dr Aneth A. Komba
+Director General
+Tanzania Institute of Education
+vi
+
+----- page 7 -----
+1.0 Introduction
+Mathematics for Ordinary Secondary Education is a compulsory subject for Form I-IV students in the General Education. Studying
+Mathematics provides students with a comprehensive understanding of operations, algorithms and applications of numbers in
+communicating ideas. It also plays an important role in equipping students with knowledge and skills to think logically, critically,
+analytically and appreciate the value of Mathematics in solving real-world challenges. Moreover, it allows students to develop
+skills that can be applied in various fields, promoting self-reliance in project planning, budget management, and effective debating
+for socio-economic development.
+This syllabus is designed to guide the teaching and learning of mathematics at Ordinary Secondary Education, Form I-IV, in
+the United Republic of Tanzania. The syllabus interprets the competences indicated in the 2023 Ordinary Secondary Education
+Curriculum. It also provides teaching and learning opportunities that guide teachers to apply different methods and strategies to
+promote students’ mathematical literacy and develop 21st century skills which include creativity, communication, collaboration,
+critical thinking and problem solving.
+2.0 Main Objectives of Education in Tanzania
+The main objectives of providing education in Tanzania are to enable every Tanzanian to:
+(a) Develop and improve his or her personality so that he or she values himself or herself and develops self-confidence;
+(b) Respect the culture, traditions and customs of Tanzania; cultural differences; dignity; human rights; attitudes and inclusive
+actions;
+(c) Apply science and technology, creativity, critical thinking, innovation, cooperation, communication and positive attitudes for
+his or her development and the sustainable development of the nation and the world at large;
+(d) Understand and protect national values, including dignity, patriotism, integrity, unity, transparency, honesty, accountability
+and the national language;
+(e) Develop life and work-related skills to increase efficiency in everyday life;
+(f) Develop a habit of loving and valuing work to increase productivity and efficiency in production and service provision;
+1
+
+----- page 8 -----
+(g) Identify and consider cross-cutting issues, including the health and well-being of the society, gender equality, as well as the
+management and sustainable conservation of the environment; and
+(h) Develop national and international cooperation, peace and justice in accordance with the Constitution of the United Republic
+of Tanzania and international conventions
+3.0 Objectives of Ordinary Secondary Education-General Education
+The objectives of Ordinary Secondary Education-General Education are to:
+(a) Strengthen, expand and develop a deeper understanding of the knowledge, skills, and attitude developed at primary education;
+(b) Safeguard customs and traditions, national unity, national values, democracy, respect for human and civic rights, duties and
+responsibilities embedded with those rights;
+(c) Build self-confidence and the ability to learn in various fields, including science and technology, and to gain theoretical and
+practical knowledge;
+(d) Improve communication using the Tanzania Sign Language, Tactile Language, Kiswahili and English. The student should be
+encouraged to learn at least one additional foreign language, depending on the school context;
+(e) Increase accountability in cross-cutting social issues, including health, security, gender equality, and sustainable environmental
+conservation;
+(f) Build competence and various skills which will enable the student to employ himself or herself, to be employed and to live
+comfortably by exploiting well his or her environment; and
+(g) Develop the readiness to continue with advanced secondary and tertiary education.
+2
+
+----- page 9 -----
+4.0 General Competences for Ordinary Secondary Education-General Education
+The general competences that will be developed by a student are to:
+(a) Use the knowledge and skills acquired in the Primary Education stage to strengthen and expand academic understanding;
+(b) Value citizenship and national customs;
+(c) Demonstrate confidence in learning various professions including science and technology, theoretical and practical knowledge;
+(d) Use language skills including Tanzanian Sign Language (TSL), Kiswahili language, English Language, and at least one other
+foreign language to communicate;
+(e) Use knowledge of cross-cutting issues to manage the environment around them; and
+(f) Use knowledge and skills to enable a student to be s elf-employed, employable, and manage life and conserve the environment.
+5.0 Main and Specific Competences
+The main and specific competences to be developed are presented in Table 1.
+Table 1: Main and Specific Competences for Form I-IV
+No Main competences Specific competences
+1.0 Demonstrate mastery of 1.1 Use numerical skills in different contexts
+mathematical language
+1.2 Use ratios and proportions in daily life
+1.3 Use rates and variations in different contexts
+2.0 Demonstrate mastery of basic 2.1 Use geometry, approximations, relations, and functions in various contexts
+concepts in geometry and algebra 2.2 Use algebra and matrices in problem solving
+2.3 Use sets, sequences and series in problem solving
+3
+
+----- page 10 -----
+3.0 Demonstrate mastery of basic 3.1 Use basic coordinate geometry, trigonometry, and vectors skills in daily life
+concepts in coordinate geometry,
+3.2 Use probability in problem solving
+trigonometry, circles, vectors,
+3.3 Use statistics in problem solving
+probability and statistics
+6.0 Roles of Teachers, Students, and Parents in Teaching and Learning Process
+The syllabus for Mathematics recognises that a good relationship between teachers, students, and parents/guardians is fundamental
+to ensure successful learning. This section outlines the roles of each participant in facilitating effective teaching and learning of
+Mathematics for Ordinary Secondary Education.
+6.1 The teacher
+The teacher is expected to:
+(a) Help the student to learn and acquire the intended competencies in Mathematics;
+(b) Use teaching and learning approaches that will allow students with different needs and abilities to:
+(i) develop the competencies needed in the 21st century;
+(ii) activelly participate in the teaching and learning process;
+(c) Use student centred instructional strategies that make the student a centre of learning which allow them to think, reflect and
+search for information from various sources;
+(d) Create a friendly teaching and learning environment;
+(e) Prepare and improvise teaching and learning resources;
+4
+
+----- page 11 -----
+(f) Conduct formative assessment regularly by using tools and methods which assess theory and practice;
+(g) Treat all the students equally irrespective of their differences;
+(h) Protect the student while at school;
+(i) Keep track of the student’s daily progress;
+(j) Identify the individual student’s needs and provide the right intervention;
+(k) Involve parents/guardians and the society at large in the student’s learning process; and
+(l) I ntegrate cross-cutting issues and ICT in the teaching and learning process;
+6.2 The student
+The student is expected to:
+(a) D evelop the intended competences by participating actively in various learning activities inside and outside the classroom; and
+(b) Participate in the search for knowledge from various sources, including textbooks, reference books and other publications in
+online libraries.
+6.3 The parent
+The parent/guardian is expected to:
+(a) Monitor the child’s academic progress in school;
+(b) Where possible, provide the child with the needed academic support;
+(c) P rovide the child with a safe and friendly home environment which is conducive for their learning;
+(d) Keep track of the child’s progress in behaviour;
+(e) Ensure that the child is safe while at home;
+(f) Give the child all necessary materials required in the learning process; and
+(g) Instill in the child a sense of commitment and positive value towards education and work.
+5
+
+----- page 12 -----
+7.0 Teaching and Learning Methods
+The teaching and learning methods are instrumental in developing student’s competences. This syllabus suggests teaching and
+learning methods for each activity which includes but not limited to discussions, presentations, field visits, practical work, research,
+scientific experiments, and project works. However, a teacher is advised to plan and use other appropriate methods based on the
+environment or context. All the teaching and learning methods should be integrated with the everyday lives of students.
+8.0 Learning and Teaching Resources
+The process of teaching and learning requires different resources. In that regard, both the teacher and students should work together
+to collect or improvise alternative resources available in the school and home environment when needed. The teacher and student
+are expected to constantly seek for information from various sources to effectively facilitate teaching and learning process. The list
+of approved textbooks and reference books shall be provided by TIE.
+9.0 Assessment
+Assessment is important in teaching and learning of Mathematics subject. It is divided into formative and summative assessments.
+Formative assessment informs both the teacher and students on the progress of teaching and learning, and in making decisions
+on improving the teaching and learning process. Teachers are, therefore, expected to apply a wide range of formative assessment
+methods which include but not limited to discussions, presentations, oral questions, experiments, observations, practical and
+projects.
+Summative assessment, on the other hand, will focus on determining student’s achievement of learning. Teachers are expected to
+use a variety of summative assessments including mid-term tests, terminal, mock examinations and projects. The scores obtained
+from these assessments will be used as Continuous Assessment (CA). Therefore, the continuous assessments shall contribute 30%
+and the National Form IV Examination shall be 70% of the student’s final achievement, as indicated in Table 2.
+6
+
+----- page 13 -----
+Table 2: Contribution of Continuous Assessment and National Examination in the final score
+Assessment Measures Weight (%)
+Standard VI National Assessment 5.0
+Form II National Assessment 6.0
+Form III Annual Examination 5.0
+Project 7.0
+Form IV Mock Examination 7.0
+Form IV National Examination 70
+Total 100
+10.0 Number of Periods
+The Mathematics Syllabus for Ordinary Secondary Education Form I-IV provides estimates of the time that will be spent in
+teaching and learning, in consideration of the complexity of the specific competences and the learning activities. Five periods of 40
+minutes each have been allocated for this subject per week.
+11.0 Teaching and Learning Contents
+The content of this syllabus is presented in matrix form with seven columns which include main competences, specific competences,
+learning activities, suggested methods, assessment criteria, suggested resources, and number of periods as presented in Tables 3 - 6.
+7
+
+----- page 14 -----
+Form I
+Table 3: Detailed Contents for Form I
+Number
+Main Specific Learning Suggested teaching and Assessment Suggested
+of
+competences competences activities learning methods criteria resources
+periods
+1.0 Demonstrate 1.1 Use (a) Explain Group discussion: The basic Charts of 30
+mastery of numerical the basic Guide students to discuss concept of relationships
+mathematical skills in concepts of meaning of mathematics and mathematics between
+language different Mathematics branches of mathematics are clearly mathematics
+contexts (Meaning of explained and other
+mathematics, fields, real
+Brainstorming:
+branches of life objects,
+Guide students to brainstorm on
+mathematics, Math Games
+importance of mathematics in
+relationship and Apps,
+daily life
+between Educational
+mathematics channels
+Jigsaw:
+and other
+Guide students to explain the
+subjects,
+relationship of mathematics
+importance of
+with other disciplines
+mathematics)
+8
+
+----- page 15 -----
+Number
+Main Specific Learning Suggested teaching and Assessment Suggested
+of
+competences competences activities learning methods criteria resources
+periods
+(b) Explain the Observation: Provide students Rational, Calculator,
+concept of with visual aids like bars/strips irrational, and Charts
+rational, or circles and guide them to cut real numbers of real
+irrational, and the aids in small equal parts. are well numbers,
+real numbers Relate their responses to the explained ruler, tape
+measure,
+meaning of fractions
+graph
+Problem solving: Organise papers,
+students in manageable groups number line
+and assign each group word chart
+problems that require students
+to apply their knowledge
+of fractions, decimals and
+percentages to real word
+scenarios. Guide them to present
+the results and relate their
+findings with rational numbers
+Exploration: Guide students to
+relate real numbers to real-life
+situations, for example, money
+and measurement
+9
+
+----- page 16 -----
+Main Specific Learning Suggested teaching and Assessment Suggested Number
+of
+competences competences activities learning methods criteria resources
+periods
+(b) Convert Problem solving: Provide Repeating/ Calculator,
+repeating/ students with examples of recurring Charts
+recurring decimals and guide them to decimals of real
+decimals identify repeating/recurring are numbers,
+into decimals, and convert repeating/ correctly ruler, tape
+fractions recurring decimals into fractions converted measure,
+and vice and vice versa and share with into graph
+versa the rest of the class through fractions papers
+presentations
+(c) Represent Group discussion: Rational
+rational Organise students in manageable numbers
+numbers on groups to draw number lines. are well
+a number Guide them to discuss steps of represented
+line representing rational numbers on the
+on a number line and share their number line
+results with the rest of the class
+through presentations
+Problem solving: Guide
+students to suggest real-life
+problems involving rational
+numbers. Ask them to locate
+points on the number line and
+perform calculations based on
+the given scenario
+10
+
+----- page 17 -----
+Main Specific Learning Suggested teaching and Assessment Suggested Number
+of
+competences competences activities learning methods criteria resources
+periods
+(d) Explain the Intuitive approach: Guide Absolute
+concept of students visual aids such values and
+inequalities as number line charts and inequalities
+and absolute graphing tools to explore the in real
+values of real basic concepts of inequalities numbers
+numbers and absolute values of real are properly
+numbers. determined
+(e) Describe the Brainstorming: Guide the Importance
+importance students to describe the of numbers
+of numbers importance of numbers and are well
+in real-life apply numbers in real-life described
+situations situations
+1.2 Use (a) Explain the Group discussion: Organise Ratios and Money, 36
+ratios and concept of students in manageable proportions charts of
+proportions ratios and groups to discuss and come are clearly real-life
+in daily life proportions up with real-life scenarios explained scenarios,
+involving the concept of ratios interest
+and proportions. Share with calculators,
+the rest of the class through and games
+presentations real objects,
+and bank
+Jigsaw: Guide students to
+statements
+explore how other subjects
+relate to concept of ratios and
+proportions
+11
+
+----- page 18 -----
+Suggested teaching Number
+Main Specific Learning Assessment Suggested
+and of
+competences competences activities criteria resources
+learning methods periods
+(b) Solve ratio and Think-ink-pair- Problems on Calculator,
+proportion share: Guide ratios and Charts of real
+problems students to solve proportions are numbers,
+ratio and proportion correctly solved ruler, tape
+problems and share measure,
+the results with graph papers,
+classmates number line
+chart
+2.0 Demonstrate 2.1 Use geometry, (a) Explain the Brainstorming: In Approximations Charts of a 34
+mastery approximations, concept of manageable groups are clearly number line,
+of basic relations and approximations guide Students to explained estimation
+concepts in functions in (rounding off, explore the concept jars,
+geometry various contexts significant of approximations estimation
+and algebra figures, and games and
+and share their
+decimal places) applications
+findings with other
+groups.
+Think-ink-pair-
+share: Guide
+students to pair up to
+discuss their ideas,
+thereafter, some of
+the pairs share their
+ideas with the whole
+class
+12
+
+----- page 19 -----
+Suggested teaching Number
+Main Specific Learning Assessment Suggested
+and of
+competences competences activities criteria resources
+learning methods periods
+(b) Round off Group discussion: In Numbers are
+numbers and manageable groups, rounded off
+estimate values guide students to and values of
+of expressions round off numbers expressions
+and estimate values of are correctly
+expressions and share estimated
+their findings
+(c) Approximate Jigsaw: Guide Numbers are
+numbers to students to use real- approximated
+the required life examples to to required
+significant approximate numbers significant
+figures and to the required figures and
+decimal places significant figures and decimal places
+decimal places correctly
+Problem solving:
+Assess the accuracy
+of answers provided
+by students when
+approximating
+numbers and provide
+them with feedback
+13
+
+----- page 20 -----
+Number
+Main Specific Learning Suggested teaching and Assessment Suggested
+of
+competences competences activities learning methods criteria resources
+periods
+(d) Use approximations Jigsaw: Organise Approximations
+in computations and students in manageable are correctly
+measurements groups to discover the applied in
+of quantities in use of approximations computations
+various contexts in computations and and
+measurements of measurements.
+quantities in various
+contexts
+2.2 Use (a) Explore the basic Group discussion: The basic tenets Beam 45
+algebra tenets of algebra Organize students in of algebra balance,
+manageable groups, are correctly mathematical
+and (algebraic
+guide them to discuss explored software such
+matrices expressions and
+equations, linear algebraic expressions as MATLAB,
+in
+simultaneous and equations and
+problem
+equations of GeoGebra,
+Visual representations:
+solving
+two unknowns, real objects,
+Provide learners with
+inequalities in one Algebra
+visual aids such as
+unknown) animations
+diagrams, charts, and
+graphs to illustrate
+the graphs of linear
+equations
+14
+
+----- page 21 -----
+Number
+Main Specific Learning Suggested teaching and Assessment Suggested
+of
+competences competences activities learning methods criteria resources
+periods
+(b) Use algebraic Problem solving: Algebraic Beam
+expressions to Incorporate word problems expressions balance,
+model situations that require students to are applied mathematical
+(word problems translate verbal descriptions to model software such
+into algebraic into algebraic expressions situations as MATLAB,
+expressions and and equations. Guide them correctly and
+equations) to identify key words that GeoGebra,
+indicate mathematical real objects,
+operations Algebra
+animations
+(c) Solve Think-ink-pair-share: Simultaneous
+simultaneous Guide students in pair linear
+equations using to solve simultaneous equations
+substitution equations using substitution are solved
+and elimination and elimination methods correctly
+methods
+Thereafter, allow some
+of the pairs to share their
+results with the whole class
+15
+
+----- page 22 -----
+Main Specific Learning Suggested teaching and Assessment Suggested Number
+of
+competences competences activities learning methods criteria resources
+periods
+(d) Solve Group discussion: In Inequalities Number
+inequalities manageable groups, are solved line chart,
+in one guide the students to properly graphing
+unknown solve inequalities in one calculator,
+unknown and present real objects
+results for common
+understanding
+3.0 Demonstrate 3.1 Use basic (a) Explore Collaborative learning: Basic Mathematical 30
+mastery of coordinate the basic Guide students to use tenets of software such
+basic concepts geometry, tenets of visual aids, such as coordinate as MATLAB,
+in coordinate trigonometry coordinate graphs and coordinate geometry and
+geometry, and vectors geometry planes to establish the are GeoGebra,
+trigonometry, skills in daily relationship between explored Maple,
+(gradient and
+circles, vectors, life coordinates and Mathematica,
+equations
+probability and geometrical shapes graph papers
+of a straight
+statistics
+line, graphs
+of linear
+equations)
+(b) Find the Problem solving: In Gradient
+gradient/ manageable groups, of line
+slope of a guide the students to is found
+line determine the slope of properly
+a given line
+16
+
+----- page 23 -----
+Main Specific Learning Suggested teaching and Assessment Suggested Number
+competences competences activities learning methods criteria resources of
+periods
+(c) Determine Visual representation: Equation of
+the equation Utilize visual aids like straight line
+of a straight diagrams and charts to is determined
+line and illustrate the concept of a and its graph
+is properly
+straight line visually. Provide
+draw its
+drawn
+examples of different types
+graph
+of straight lines and their
+corresponding equations and
+draw their graphs
+(d) Solve linear Visual representation: Simultaneous
+simultaneous Guide students to use visual equations
+equations aids such as a coordinate are correctly
+graphically plane, graph paper, or solved
+graphically
+interactive whiteboard to
+plot points, draw lines, and
+interpret the graph
+Group discussion: In
+manageable groups, guide the
+students to solve
+linear simultaneous
+equations graphically
+17
+
+----- page 24 -----
+Number
+Main Specific Learning Suggested teaching and Assessment Suggested
+of
+competences competences activities learning methods criteria resources
+periods
+(e) Use Use of technology: Guide Simultaneous
+mathematical students to use mathematical equations
+software software such as Excel, are solved
+to solve GeoGebra, Mathematica, and drawn
+and draw MATLAB to solve and draw correctly
+graphs of graphs of simultaneous
+simultaneous equations.
+equations
+Problem solving: In
+manageable groups, provide
+students with plenty
+examples and exercise to
+solve and draw graphs of
+simultaneous equations
+using mathematical software
+18
